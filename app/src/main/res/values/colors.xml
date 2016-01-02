@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#9F5CC0</color>
+    <color name="colorPrimaryDark">#7B1FA2</color>
+    <color name="colorAccent">#7C4DFF</color>
+
+    <!-- PI brand colors -->
+    <color name="red_light">#F8485E</color>
+    <color name="peach">#FFB3AB</color>
+    <color name="gray_cool">#BBBCBC</color>
+    <color name="gray_dark">#54585A</color>
+    <color name="black_light">#221C35</color>
+
+
 </resources>
