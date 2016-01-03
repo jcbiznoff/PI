@@ -12,6 +12,7 @@ public class App extends Application {
 
     private final static String PARSE_APP_KEY = "kcmNwFnHHDfanE4xbzZYzufPe5Cz74z1O4wftbej";
     private final static String PARSE_APP_SECRET = "VYQRtVcSJWUhGhjuLuy8kA7HKQ7rzbHa7Y37Work";
+    private final static String FACEBOOK_PUBLIC_TOKEN = "424019454456359|1bKu9Z_qb5Ppyw5ysZ1-MSeh-So";
 
     @Override
     public void onCreate() {

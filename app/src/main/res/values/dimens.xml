@@ -11,4 +11,5 @@
     <dimen name="keyline_small">16dp</dimen>
     <dimen name="keyline_medium">32dp</dimen>
     <dimen name="btn_login_height">48dp</dimen>
+    <dimen name="keyline_large">32dp</dimen>
 </resources>
