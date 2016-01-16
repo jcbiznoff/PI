@@ -3,33 +3,37 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/nav_nurture"
+            android:icon="@drawable/ic_nurture"
+            android:title="Nurture" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/nav_worship"
+            android:icon="@drawable/ic_worship"
+            android:title="Worship" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/nav_communicatino"
+            android:icon="@drawable/ic_communications"
+            android:title="Communication" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_evangelism"
+            android:icon="@drawable/ic_evangelism"
+            android:title="Evangelism" />
+        <item
+            android:id="@+id/nav_socials"
+            android:icon="@drawable/ic_social_services"
+            android:title="Social Services" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="About">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/nav_about_pi"
+                android:icon="@drawable/ic_pi_logo"
+                android:title="About PI" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/nav_gallery"
+                android:icon="@drawable/ic_gallery"
+                android:title="Gallery" />
         </menu>
     </item>
 
