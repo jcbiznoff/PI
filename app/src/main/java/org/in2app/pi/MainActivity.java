@@ -14,8 +14,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.facebook.AccessToken;
+import com.facebook.FacebookSdk;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.firebase.client.Firebase;
+
 import org.in2app.pi.fragment.AboutPIFragment;
 import org.in2app.pi.fragment.In2PIMainPageFragment;
+import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -26,6 +33,11 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FacebookSdk.sdkInitialize(this.getApplicationContext());
+        Firebase.setAndroidContext(this);
+
+        callGraphRequest();
+
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -54,6 +66,23 @@ public class MainActivity extends AppCompatActivity
                     = In2PIMainPageFragment.newInstance();
             Navigator.addFirstFragment(this, in2PIMainPageFragment, R.string.in2pi_main_fragment_name);
         }
+    }
+
+
+    private void callGraphRequest(){
+        String accessToken = getResources().getString(R.string.facebook_access_token);
+        String graphPath = "1384548091800506/feed";
+        GraphRequest request = GraphRequest.newGraphPathRequest(
+                AccessToken.getCurrentAccessToken(),
+                graphPath,
+                response -> {
+                    response.getJSONObject();
+
+                });
+        Bundle parameters = new Bundle();
+        parameters.putString("fields", "id,name,link");
+        request.setParameters(parameters);
+        request.executeAsync();
     }
 
     @Override

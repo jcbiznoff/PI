@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">PI</string>
-
+    <string name="facebook_app_id">1705014316420898</string>
+    <string name="facebook_access_token">424019454456359|1bKu9Z_qb5Ppyw5ysZ1-MSeh-So</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
