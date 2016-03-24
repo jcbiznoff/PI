@@ -36,7 +36,10 @@ public class MainActivity extends AppCompatActivity
         FacebookSdk.sdkInitialize(this.getApplicationContext());
         Firebase.setAndroidContext(this);
 
-        callGraphRequest();
+        App.getRestClient().getFacebookGraphApi().getPublicFeed(
+                getResources().getString(R.string.facebook_access_token),
+                "type, message, created_time"
+        );
 
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -48,7 +51,7 @@ public class MainActivity extends AppCompatActivity
                 .setAction("Action", null)
                 .show());
 
-        mDrawerLayout= (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerToggle = new ActionBarDrawerToggle(
                 this, mDrawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         mDrawerLayout.setDrawerListener(mDrawerToggle);
@@ -68,26 +71,9 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-
-    private void callGraphRequest(){
-        String accessToken = getResources().getString(R.string.facebook_access_token);
-        String graphPath = "1384548091800506/feed";
-        GraphRequest request = GraphRequest.newGraphPathRequest(
-                AccessToken.getCurrentAccessToken(),
-                graphPath,
-                response -> {
-                    response.getJSONObject();
-
-                });
-        Bundle parameters = new Bundle();
-        parameters.putString("fields", "id,name,link");
-        request.setParameters(parameters);
-        request.executeAsync();
-    }
-
     @Override
     public void onBackPressed() {
-        mDrawerLayout= (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
             mDrawerLayout.closeDrawer(GravityCompat.START);
         } else {
@@ -135,7 +121,7 @@ public class MainActivity extends AppCompatActivity
 
         }
 
-        mDrawerLayout= (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
