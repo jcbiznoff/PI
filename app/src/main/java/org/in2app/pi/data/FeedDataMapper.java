@@ -1,6 +1,6 @@
 package org.in2app.pi.data;
 
-import org.in2app.pi.data.entity.FeedData;
+import org.in2app.pi.data.entity.FeedItem;
 import org.in2app.pi.ui.model.FeedUIData;
 
 /**
@@ -8,7 +8,7 @@ import org.in2app.pi.ui.model.FeedUIData;
  */
 public class FeedDataMapper {
 
-    public FeedUIData transform (FeedData feedData){
+    public FeedUIData transform (FeedItem feedData){
         FeedUIData feedUIData = new FeedUIData();
         feedUIData.setId(feedData.getId());
         feedUIData.setMessage(feedData.getMessage());

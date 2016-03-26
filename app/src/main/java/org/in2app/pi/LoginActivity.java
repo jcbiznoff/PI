@@ -28,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         parentLayout = findViewById(R.id.activity_login_root);
         ButterKnife.bind(this);
+        Firebase.setAndroidContext(this);
         mFirebaseRef = new Firebase("https://in2-pi.firebaseio.com");
     }
 
@@ -35,8 +36,6 @@ public class LoginActivity extends AppCompatActivity {
     @OnClick(R.id.btnLogin)
     public void onLoginClicked(){
         mFirebaseRef.authWithPassword("jenny@example.com", "correcthorsebatterystaple", authResultHandler);
-
-
     }
 
     @SuppressWarnings("unused")

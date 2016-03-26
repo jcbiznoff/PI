@@ -1,6 +1,7 @@
 package org.in2app.pi.data.net;
 
-import org.in2app.pi.data.entity.FeedData;
+import org.in2app.pi.data.entity.FeedItem;
+import org.in2app.pi.data.entity.Feeds;
 
 import retrofit.http.GET;
 import retrofit.http.Query;
@@ -15,7 +16,7 @@ public interface RestApi {
      * Retrieves an {@link rx.Observable}.
      */
     @GET("/1384548091800506/feed")
-    Observable<FeedData> getPublicFeed(
+    Observable<Feeds> getPublicFeed(
             @Query("access_token") String accessToken,
             @Query("fields") String fields
     );

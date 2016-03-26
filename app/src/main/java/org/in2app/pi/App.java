@@ -3,6 +3,8 @@ package org.in2app.pi;
 import android.app.Application;
 import android.content.Context;
 
+import com.firebase.client.Firebase;
+
 import org.in2app.pi.data.net.RestClient;
 
 /**

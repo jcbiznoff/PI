@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 /**
  * Created by jaychung on 3/23/16.
  */
-public class FeedData {
+public class FeedItem {
     @SerializedName("id")
     String id;
     @SerializedName("message")
