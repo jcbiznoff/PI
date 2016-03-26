@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">PI</string>
-
+    <string name="facebook_app_id">1705014316420898</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
@@ -18,4 +18,13 @@
     <string name="aboutpi_main_fragment_name">AboutPIFragment</string>
     <string name="location_intro_title">주일예배</string>
     <string name="location_intro_body">West Campus - 청년부\n오후 1:30PM\nWest Park Church\n165 West 86th st. New York, NY 10024</string>
+
+    <string name="facebook_access_token">424019454456359|1bKu9Z_qb5Ppyw5ysZ1-MSeh-So</string>
+    <string name="facebook_post_link">https://www.facebook.com/IN2WIN2/posts/</string>
+    <string name="weekly_programs_request"><![CDATA[https://api.import.io/store/data/3bc15cdb–dbc3-4e1a-b937-df3c2a68dbbc/_query?input/webpage/url=http%3A%2F%2Fvision.onnuri.org%2Fin2%2Farchives%2Fsunday_bulletin_category%2Fsunday-bulletin&_user=0a668a36-6aa0-4bf7-a33f-4aa867422551&_apikey=0a668a366aa04bf7a33f4aa86742255106cd4c765c1dc526570f30d171b722431f993ad7303c4f09ce394851f9fc53aecb7bf49dd2f2f02cd8e0624fa8dedf188642ab734d5c9159f291501b1b381633]]></string>
+    <string name="youtube_video_link">https://www.youtube.com/user/in2ube/videos</string>
+    <string name="apply_workship_team_link">https://docs.google.com/forms/d/15NeQ-ieXeNnphF920ocMEnvkYTguVVGHIGQOejcU3tc/viewform?c=0&amp;w=1</string>
+    <string name="apply_nurture_team_link">https://docs.google.com/forms/d/1PCWAVYTbycFUQM6eUMDOqnJamYyV9oAp1HbB7VqLDE4/viewform?c=0&amp;w=1</string>
+    <string name="apply_comm_team_link">http://goo.gl/forms/elqLSFuvCA</string>
+    <string name="apply_socialservice_team_link">https://docs.google.com/a/in2church.org/forms/d/1iVa3r1dZ4GTe4FzSBTHFUV4dfY4MyVIYGEN-MkXOF_g/edit?usp=sharing_eid&amp;ts=5614a6c8</string>
 </resources>

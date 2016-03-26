@@ -12,6 +12,7 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -25,24 +26,26 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
-retrolambda {
-    jdk JAVA8_HOME
-    oldJdk JAVA7_HOME
-    incremental false
-}
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
 
-    //parse dependecies
-    compile 'com.parse.bolts:bolts-android:1.0.0'
-    compile 'com.parse:parse-android:1.10.0'
 
     //appcompats
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
+    compile 'com.android.support:multidex:1.0.1'
+
+    compile "com.google.code.gson:gson:2.4"
+    compile "io.reactivex:rxjava:1.0.14"
+    compile "com.squareup.retrofit:retrofit:1.9.0"
+    compile "io.reactivex:rxandroid:1.0.1"
 
     //binder
     compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.facebook.android:facebook-android-sdk:[4,5)'
+
+    //fire base
+    compile 'com.firebase:firebase-client-android:2.5.1+'
 }

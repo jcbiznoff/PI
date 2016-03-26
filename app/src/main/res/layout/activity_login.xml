@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/login_bg_gradient"
     android:orientation="vertical"
+    android:id="@+id/activity_login_root"
     android:paddingLeft="@dimen/keyline_medium"
     android:paddingRight="@dimen/keyline_medium">
 
