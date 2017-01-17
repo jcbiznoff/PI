@@ -8,11 +8,10 @@ import android.support.v7.app.AppCompatActivity;
  */
 public class Navigator {
 
-    public static void addFirstFragment(AppCompatActivity activity, Fragment frag, int fragName) {
+    public static void moveToFragment(AppCompatActivity activity, Fragment frag) {
         activity.getSupportFragmentManager().beginTransaction()
-                .add(R.id.container_main, frag, activity.getResources().getString(fragName))
+                .add(R.id.container_main, frag, frag.getClass().getSimpleName())
                 .addToBackStack(null)
                 .commit();
-        activity.getSupportFragmentManager().executePendingTransactions();
     }
 }

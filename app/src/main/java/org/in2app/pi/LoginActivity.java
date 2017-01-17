@@ -5,12 +5,15 @@ import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -21,6 +24,15 @@ import butterknife.OnClick;
 public class LoginActivity extends AppCompatActivity {
     Firebase mFirebaseRef;
     private View parentLayout;
+
+    @Bind(R.id.email)
+    EditText etEmail;
+
+    @Bind(R.id.password)
+    EditText etPassword;
+
+    @Bind(R.id.tvSkip)
+    TextView tvSkip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,14 +46,22 @@ public class LoginActivity extends AppCompatActivity {
 
     @SuppressWarnings("unused")
     @OnClick(R.id.btnLogin)
-    public void onLoginClicked(){
-        mFirebaseRef.authWithPassword("jenny@example.com", "correcthorsebatterystaple", authResultHandler);
+    public void onLoginClicked() {
+        String email = etEmail.getText().toString();
+        String password = etPassword.getText().toString();
+        mFirebaseRef.authWithPassword(email, password, authResultHandler);
     }
 
     @SuppressWarnings("unused")
     @OnClick(R.id.btnSignUp)
-    public void onSignupClicked(){
+    public void onSignupClicked() {
         Intent intent = new Intent(this, SignUpActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.tvSkip)
+    public void skipLogin() {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
     }
 
@@ -54,10 +74,11 @@ public class LoginActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
         }
+
         @Override
         public void onAuthenticationError(FirebaseError firebaseError) {
             // Authenticated failed with error firebaseError
-            Snackbar.make(parentLayout ,firebaseError.getMessage(), Snackbar.LENGTH_LONG).show();
+            Snackbar.make(parentLayout, firebaseError.getMessage(), Snackbar.LENGTH_LONG).show();
         }
     };
 

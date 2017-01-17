@@ -17,11 +17,13 @@ import com.facebook.FacebookSdk;
 import org.in2app.DefaultSubscriber;
 import org.in2app.pi.data.FeedDataMapper;
 import org.in2app.pi.fragment.AboutPIFragment;
+import org.in2app.pi.fragment.CommunicationFragment;
+import org.in2app.pi.fragment.EvangelismFragment;
 import org.in2app.pi.fragment.In2PIMainPageFragment;
+import org.in2app.pi.fragment.NurtureFragment;
+import org.in2app.pi.fragment.SocialsFragment;
+import org.in2app.pi.fragment.WorshipFragment;
 import org.in2app.pi.ui.model.FeedUIData;
-
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -35,15 +37,15 @@ public class MainActivity extends AppCompatActivity
         FacebookSdk.sdkInitialize(this.getApplicationContext());
 
         FeedDataMapper feedDataMapper = new FeedDataMapper();
-        App.getRestClient()
-                .getFacebookGraphApi()
-                .getPublicFeed(
-                getResources().getString(R.string.facebook_access_token),
-                "type, message, created_time")
-                .map(feeds -> feedDataMapper.transform(feeds))
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new FacebookQuerySubscriber());
+//        App.getRestClient()
+//                .getFacebookGraphApi()
+//                .getPublicFeed(
+//                getResources().getString(R.string.facebook_access_token),
+//                "type, message, created_time")
+//                .map(feeds -> feedDataMapper.transform(feeds))
+//                .subscribeOn(Schedulers.io())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(new FacebookQuerySubscriber());
 
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -80,7 +82,7 @@ public class MainActivity extends AppCompatActivity
         if (isFirstTime) {
             Fragment in2PIMainPageFragment
                     = In2PIMainPageFragment.newInstance();
-            Navigator.addFirstFragment(this, in2PIMainPageFragment, R.string.in2pi_main_fragment_name);
+            Navigator.moveToFragment(this, in2PIMainPageFragment);
         }
     }
 
@@ -118,18 +120,28 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_nurture) {
+            Fragment aboutPiFragment = NurtureFragment.newInstance();
+            Navigator.moveToFragment(this, aboutPiFragment);
 
         } else if (id == R.id.nav_worship) {
+            Fragment aboutPiFragment = WorshipFragment.newInstance();
+            Navigator.moveToFragment(this, aboutPiFragment);
 
         } else if (id == R.id.nav_communicatino) {
+            Fragment aboutPiFragment = CommunicationFragment.newInstance();
+            Navigator.moveToFragment(this, aboutPiFragment);
 
         } else if (id == R.id.nav_evangelism) {
+            Fragment aboutPiFragment = EvangelismFragment.newInstance();
+            Navigator.moveToFragment(this, aboutPiFragment);
 
         } else if (id == R.id.nav_socials) {
+            Fragment aboutPiFragment = SocialsFragment.newInstance();
+            Navigator.moveToFragment(this, aboutPiFragment);
 
         } else if (id == R.id.nav_about_pi) {
             Fragment aboutPiFragment = AboutPIFragment.newInstance();
-            Navigator.addFirstFragment(this, aboutPiFragment, R.string.aboutpi_main_fragment_name);
+            Navigator.moveToFragment(this, aboutPiFragment);
         } else if (id == R.id.nav_gallery) {
 
         }

@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_login_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_bg_gradient"
     android:orientation="vertical"
-    android:id="@+id/activity_login_root"
     android:paddingLeft="@dimen/keyline_medium"
     android:paddingRight="@dimen/keyline_medium">
 
+    <TextView
+        android:id="@+id/tvSkip"
+        android:textSize="24dp"
+        android:layout_gravity="right"
+        android:text="SKIP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <LinearLayout
-        android:layout_marginTop="@dimen/keyline_small"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="@dimen/keyline_small"
         android:layout_weight="1"
         android:gravity="center">
 
@@ -36,18 +44,27 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:layout_margin="8dp"
                 android:layout_width="@dimen/icon_small_size"
                 android:layout_height="match_parent"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_icon_user" />
 
-            <EditText
+
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="@dimen/keyline_mini"
-                android:hint="Username"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white" />
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp">
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="email"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1" />
+            </android.support.design.widget.TextInputLayout>
 
         </LinearLayout>
 
@@ -59,19 +76,26 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:layout_margin="8dp"
                 android:layout_width="@dimen/icon_small_size"
                 android:layout_height="match_parent"
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_icon_pw" />
 
-            <EditText
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="@dimen/keyline_mini"
-                android:hint="Password"
-                android:password="true"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white" />
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp">
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="password"
+                    android:inputType="textPassword"
+                    android:maxLines="1" />
+            </android.support.design.widget.TextInputLayout>
         </LinearLayout>
     </LinearLayout>
 
@@ -83,7 +107,7 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <Button
+        <android.support.v7.widget.AppCompatButton
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="@dimen/btn_login_height"

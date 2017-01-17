@@ -59,7 +59,7 @@ public class BaseFragment extends Fragment {
         ((MainActivity) getActivity()).setDrawerState(false);
 
         @SuppressLint("PrivateResource")
-        final Drawable upArrow = ContextCompat.getDrawable(getContext(), R.drawable.abc_ic_ab_back_mtrl_am_alpha);
+        final Drawable upArrow = ContextCompat.getDrawable(getContext(), R.drawable.ic_arrow_back_black_24dp);
         int arrowColor = ContextCompat.getColor(getContext(), R.color.white);
 
         if (upArrow != null)
